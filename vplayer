@@ -1,0 +1,48 @@
+// ==UserScript==
+// @name         youtube player
+// @namespace    https://www.youtubeinmp3.com
+// @version      1.2.2
+// @description  Adds a download button to YouTube videos which allows you to download the MP3 of the video without having to leave the page
+// @author       Arari
+// @include      http*://*.youtube.com/watch?v=*&*
+// @include      http*://*.youtube.com/watch?v=*
+// @run-at       document-end
+// ==/UserScript==
+
+//window.location.href = "http://www.w3schools.com";
+
+
+
+var str = window.location.href;
+var fstr = str.substring(str.indexOf('v=') + 2, str.length);
+window.location.href = 'https://alialhamad99.github.io/youtube/player.html?id=' + fstr;
+
+(function() {
+    'use strict';
+'player-theater-container';
+
+var divs = document.getElementsByTagName("div");
+for (var i = 0; i < divs.length; i++) {
+  divs[i].style.visibility = 'hidden';
+}
+
+
+document.getElementsByTagName("ytd-watch-next-secondary-results-renderer")[0].style.display = "none";
+
+
+
+document.getElementById("player-theater-container").style.position = 'absolute';
+         document.getElementById("player-theater-container").style.top = '0';
+    document.getElementById("player-theater-container").style.bottom = '1000';
+         document.getElementById("player-theater-container").style.height = '100%';
+
+
+
+
+    var cols = document.getElementsByClassName('html5-video-container');
+  for(i = 0; i < cols.length; i++) {
+   cols[i].style.visibility = 'visible';
+  }
+
+    // Your code here...
+})();
