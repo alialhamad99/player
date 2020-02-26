@@ -1,0 +1,98 @@
+// ==UserScript==
+// @name         you tube channels
+// @namespace    https://www.youtubeinmp3.com
+// @version      1.2.2
+// @description  Adds a download button to YouTube videos which allows you to download the MP3 of the video without having to leave the page
+// @author       Arari
+// @include      http*://*.youtube.com/user/*
+// @include      http*://youtube.com/*
+// @include      http*://*.youtube.com
+// @include      http*://*.youtube.com/
+// @include      http*://*.youtu.be/*
+// @include      http*://youtu.be/*
+// @include      http*://youtu.com/*&*
+// @include      https://www.youtube.com/channel/*
+// @include      http://www.youtube.com/channel/*/videos
+// @run-at       document-end
+// ==/UserScript==
+
+
+
+//document.getElementById('content').prepend('<div style="font-size:large;"> content html </div>');
+
+
+document.onmouseover = function(e) {
+   if (e.target.id == 'icon'){
+     window.location.href =window.location.href
+}
+}
+
+
+window.addEventListener('click', function(e) {
+var str = window.location.href;
+    if (str.indexOf('v=') > 0) {
+var fstr = str.substring(str.indexOf('v=') + 2, str.length);
+window.location.href = 'https://alialhamad99.github.io/youtube/player.html?id=' + fstr;
+
+}else if (str.indexOf('channel') > 0){
+    if (str.indexOf('videos') < 0){
+        window.location.href =window.location.href + '/videos';
+        }
+
+}else{
+
+}
+
+}, false);
+
+
+
+
+(function() {
+    'use strict';
+
+    var divs = document.getElementsByTagName("div");
+    var countdiv = divs.length;
+
+
+for (var i = 0; i < divs.length; i++) {
+     document.getElementById("hover-overlays").style.visibility = 'hidden';
+ if(i < 50){
+  divs[i].style.visibility = 'hidden';
+
+}
+    }
+
+if (window.location.href.indexOf("player") > 0) {
+ document.getElementById("player").style.visibility = 'visible';
+    }
+
+
+document.getElementById("header").setAttribute("id", "header1");
+    document.getElementById("header").style.display = "none";
+    document.getElementById("content").style.visibility = 'visible';
+document.getElementById("player").style.visibility = 'visible';
+
+document.getElementById("items").style.visibility = 'hidden';
+
+//hover-overlays
+
+    // Your code here...
+
+
+//    var iframe = document.createElement('iframe');
+
+
+//document.getElementById('content').prepend(iframe);
+//iframe.src = 'www.google.com';
+
+//   var node = document.createElement("div");
+
+//node.innerHTML = "<div style='position:absolute;color:blue;z-index:1000'><a href='google.com'>barzczxczxczxczxczx</a></div>";
+
+  //  document.getElementById('content').prepend(node.firstChild);
+
+
+
+
+})();
